@@ -14,8 +14,8 @@ namespace PieLang.Compilation.Analysis.Tests
         {
             var code = Resources.HelloWorld.Split(new [] {Environment.NewLine}, StringSplitOptions.None).First();
             var result = Default.Analysis(code);
-            Assert.AreEqual(3, result.Count());
-            Assert.AreEqual(2, result.Count(r => r is Keyword));
+            Assert.AreEqual(2, result.Count());
+            Assert.AreEqual(1, result.Count(r => r is Keyword));
             Assert.AreEqual(1, result.Count(r => r is Identitifer));
         }
 
@@ -24,9 +24,9 @@ namespace PieLang.Compilation.Analysis.Tests
         {
             var code = Resources.HelloWorld;
             var result = Default.Analysis(code);
-            Assert.AreEqual(13, result.Count());
+            Assert.AreEqual(12, result.Count());
 
-            Assert.AreEqual(4, result.Count(r => r is Keyword));
+            Assert.AreEqual(3, result.Count(r => r is Keyword));
             Assert.AreEqual(6, result.Count(r => r is Identitifer));
             Assert.AreEqual(2, result.Count(r=> r is Symbol));
             Assert.AreEqual(1, result.Count(r=> r is StringConstant));

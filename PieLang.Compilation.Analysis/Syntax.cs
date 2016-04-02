@@ -5,7 +5,7 @@ namespace PieLang.Compilation.Analysis
 {
     public class Syntax
     {
-        private static string[] _keywords = { "with", "as", "def" };
+        private static string[] _keywords = { "with", "as", "define" };
         private static string[] _symbols = {">", "->"};
 
         public static bool IsKeyword(string value)

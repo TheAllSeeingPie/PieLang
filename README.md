@@ -3,11 +3,11 @@ For no reason whatsoever I feel like writing my own programming language. Lots o
 
 ## Hello world!
 ```
-with HelloWorld as
-	def HelloWorld as
+with Greeting
+	define HelloWorld as
 		"Hello world" >
 
-HelloWorld -> say
+Greeting -> say
 say HelloWorld
 ```
 ## Introduction
