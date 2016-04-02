@@ -51,6 +51,12 @@
     <Compile Include="Tokens\Symbol.cs" />
     <Compile Include="Tokens\TokenBase.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PieLang\PieLang.csproj">
+      <Project>{0DDA8169-1DA4-4F87-8F92-10B494D33C16}</Project>
+      <Name>PieLang</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

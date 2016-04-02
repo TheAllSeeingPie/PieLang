@@ -1,6 +1,3 @@
 with Greeting
 	define HelloWorld as
 		"Hello world" >
-
-Greeting -> say
-say HelloWorld

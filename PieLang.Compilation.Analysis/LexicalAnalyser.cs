@@ -5,18 +5,13 @@ using PieLang.Compilation.Analysis.Tokens;
 
 namespace PieLang.Compilation.Analysis
 {
-    public class LexicalAnalyser
+    public class LexicalAnalyser : GenericIterator<char>
     {
-        private readonly char[] _data;
-        private int CurrentPosition;
         private IList<IToken> _tokens = new List<IToken>();
 
-        public LexicalAnalyser(string data)
+        public LexicalAnalyser(string data) : base (data.ToArray())
         {
-            _data = data.ToArray();
         }
-
-        public bool IsComplete { get; private set; }
 
         public IEnumerable<IToken> Analyse()
         {
@@ -37,22 +32,18 @@ namespace PieLang.Compilation.Analysis
             }
 
             IgnoreWhitespace();
-            var @char = CurrentChar();
+            var @char = Current();
 
-            if (Syntax.IsSymbol(CurrentChar()))
+            if (Syntax.IsSymbol(Current()))
             {
-                var token = FetchStringWhile(c => !char.IsWhiteSpace(CurrentChar()));
+                var token = FetchStringWhile(c => !char.IsWhiteSpace(Current()));
                 _tokens.Add(new Symbol(token));
-            }
-
-            if (Syntax.IsStringConstantIdentifier(CurrentChar()))
+            } else if (Syntax.IsStringConstantIdentifier(Current()))
             {
                 CurrentPosition++;
                 var token = FetchStringWhile(c => !Syntax.IsStringConstantIdentifier(c));
                 _tokens.Add(new StringConstant(token));
-            }
-
-            if (Syntax.IsStartOfKeywordOrIdentifier(@char))
+            } else if (Syntax.IsStartOfKeywordOrIdentifier(@char))
             {
                 var token = FetchStringWhile(Syntax.IsPartOfKeywordOrIdentitifer);
                 if (Syntax.IsKeyword(token))
@@ -69,17 +60,12 @@ namespace PieLang.Compilation.Analysis
         private string FetchStringWhile(Func<char, bool> shouldContinue)
         {
             var chars = new List<char>();
-            while (CurrentPosition < _data.Length && shouldContinue(CurrentChar()))
+            while (CurrentPosition < _data.Length && shouldContinue(Current()))
             {
-                chars.Add(CurrentChar());
+                chars.Add(Current());
                 CurrentPosition++;
             }
             return new string(chars.ToArray());
-        }
-
-        private char CurrentChar()
-        {
-            return _data[CurrentPosition];
         }
 
         private void IgnoreWhitespace()

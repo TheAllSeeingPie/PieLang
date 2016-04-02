@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PieLang
 {
-    public class Class1
+    public interface ICodeGenerator
     {
+        void BeginClass(string name);
     }
 }
