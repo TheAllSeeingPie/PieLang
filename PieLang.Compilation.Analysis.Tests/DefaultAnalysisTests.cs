@@ -10,9 +10,9 @@ namespace PieLang.Compilation.Analysis.Tests
         [TestMethod]
         public void A_class_is_defined_using_with_syntax()
         {
-            var code = "with HelloWorld";
+            var code = "with HelloWorld as";
             var result = Default.Analyse(code);
-            Assert.AreEqual(2, result.Count());
+            Assert.AreEqual(3, result.Count());
         }
     }
 }
