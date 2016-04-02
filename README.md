@@ -22,10 +22,10 @@ with-statement		::= **with** *expr*
 
 define-as-statement	::= **define** *expr* **as**
 
-var        ::= identifier
+var        ::= *identifier*
 
 identifier ::= (*letter*)*
 
-letter    ::= A | B | … | Z | a | b | … | z
+letter    ::= **A** | **B** | … | **Z** | **a** | **b** | … | **z**
 
-digit      ::= 0 | 1 | … | 9
+digit      ::= **0** | **1** | … | **9**
