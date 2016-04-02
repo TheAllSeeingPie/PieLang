@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Identitifer.cs" />
     <Compile Include="Default.cs" />
+    <Compile Include="IToken.cs" />
+    <Compile Include="Keyword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TokenBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
