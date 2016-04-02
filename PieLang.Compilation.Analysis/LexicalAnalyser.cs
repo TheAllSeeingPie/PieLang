@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using PieLang.Compilation.Analysis.Tokens;
 
 namespace PieLang.Compilation.Analysis
 {
@@ -38,9 +39,22 @@ namespace PieLang.Compilation.Analysis
             IgnoreWhitespace();
             var @char = CurrentChar();
 
+            if (Syntax.IsSymbol(CurrentChar()))
+            {
+                var token = FetchStringWhile(c => !char.IsWhiteSpace(CurrentChar()));
+                _tokens.Add(new Symbol(token));
+            }
+
+            if (Syntax.IsStringConstantIdentifier(CurrentChar()))
+            {
+                CurrentPosition++;
+                var token = FetchStringWhile(c => !Syntax.IsStringConstantIdentifier(c));
+                _tokens.Add(new StringConstant(token));
+            }
+
             if (Syntax.IsStartOfKeywordOrIdentifier(@char))
             {
-                var token = ContinueWhile(Syntax.IsPartOfKeywordOrIdentitifer);
+                var token = FetchStringWhile(Syntax.IsPartOfKeywordOrIdentitifer);
                 if (Syntax.IsKeyword(token))
                 {
                     _tokens.Add(new Keyword(token));
@@ -52,11 +66,12 @@ namespace PieLang.Compilation.Analysis
             }
         }
 
-        private string ContinueWhile(Func<char, bool> shouldContinue)
+        private string FetchStringWhile(Func<char, bool> shouldContinue)
         {
-            var chars = new List<char> {CurrentChar()};
+            var chars = new List<char>();
             while (CurrentPosition < _data.Length && shouldContinue(CurrentChar()))
             {
+                chars.Add(CurrentChar());
                 CurrentPosition++;
             }
             return new string(chars.ToArray());

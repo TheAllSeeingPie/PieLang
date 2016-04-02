@@ -1,10 +1,16 @@
-﻿namespace PieLang.Compilation.Analysis
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace PieLang.Compilation.Analysis
 {
     public class Syntax
     {
+        private static string[] _keywords = { "with", "as", "def" };
+        private static string[] _symbols = {">", "->"};
+
         public static bool IsKeyword(string value)
         {
-            return value == "with";
+            return _keywords.Contains(value);
         }
 
         public static bool IsPartOfKeywordOrIdentitifer(char c)
@@ -15,6 +21,16 @@
         public static bool IsStartOfKeywordOrIdentifier(char c)
         {
             return char.IsLetter(c);
+        }
+
+        public static bool IsStringConstantIdentifier(char c)
+        {
+            return c == '"';
+        }
+
+        public static bool IsSymbol(char c)
+        {
+            return _symbols.Select(s => s.First()).Contains(c);
         }
     }
 }

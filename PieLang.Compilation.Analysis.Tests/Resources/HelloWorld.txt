@@ -1,0 +1,6 @@
+with HelloWorld as
+	def HelloWorld as
+		"Hello world" >
+
+HelloWorld -> say
+say HelloWorld

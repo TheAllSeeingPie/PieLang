@@ -1,4 +1,4 @@
-﻿namespace PieLang.Compilation.Analysis
+﻿namespace PieLang.Compilation.Analysis.Tokens
 {
     public interface IToken
     {
