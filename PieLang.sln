@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieLang", "PieLang\PieLang.csproj", "{0DDA8169-1DA4-4F87-8F92-10B494D33C16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieLang.Compilation.Analysis", "PieLang.Compilation.Analysis\PieLang.Compilation.Analysis.csproj", "{7F891D9B-DED9-4765-893A-2F9569B19AB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieLang.Compilation.Analysis.Tests", "PieLang.Compilation.Analysis.Tests\PieLang.Compilation.Analysis.Tests.csproj", "{3C30EFB5-CBA4-40EF-A572-D27ED1781215}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEFB36EB-6EBE-40A4-90B8-A1BBBE3C5B2D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DDA8169-1DA4-4F87-8F92-10B494D33C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DDA8169-1DA4-4F87-8F92-10B494D33C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DDA8169-1DA4-4F87-8F92-10B494D33C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DDA8169-1DA4-4F87-8F92-10B494D33C16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F891D9B-DED9-4765-893A-2F9569B19AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F891D9B-DED9-4765-893A-2F9569B19AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F891D9B-DED9-4765-893A-2F9569B19AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F891D9B-DED9-4765-893A-2F9569B19AB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C30EFB5-CBA4-40EF-A572-D27ED1781215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C30EFB5-CBA4-40EF-A572-D27ED1781215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C30EFB5-CBA4-40EF-A572-D27ED1781215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C30EFB5-CBA4-40EF-A572-D27ED1781215}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
