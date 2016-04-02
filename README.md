@@ -2,7 +2,7 @@
 For no reason whatsoever I feel like writing my own programming language. Lots of interesting times await me it seems ...
 
 ## Hello world!
-A simple class that just has a "Hello world" method writing to the console:
+A simple class that just has a "Hello world!" method writing to the console:
 ```
 with Greeting
 	define HelloWorld as
