@@ -20,7 +20,7 @@ statment		::= with-statment | define-as-statement
 
 with-statement		::= **with** *expr*
 
-define-as-statement	::= **define** *expr* **as**
+define-as-statement	::= **define** *expr* **as** *expr*
 
 var        ::= *identifier*
 
