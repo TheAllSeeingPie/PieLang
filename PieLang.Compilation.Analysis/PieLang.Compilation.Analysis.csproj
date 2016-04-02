@@ -44,7 +44,9 @@
     <Compile Include="Default.cs" />
     <Compile Include="IToken.cs" />
     <Compile Include="Keyword.cs" />
+    <Compile Include="LexicalAnalyser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Syntax.cs" />
     <Compile Include="TokenBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
